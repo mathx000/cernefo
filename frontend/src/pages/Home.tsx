@@ -45,7 +45,7 @@ const contacts = [
   {
     name: "Beatriz Nogueira",
     role: "Gestora de ativos",
-    focus: "Administração de carteira e reporte",
+    focus: "Administração de carteira e relatório",
   },
 ];
 
@@ -132,7 +132,7 @@ export default function Home() {
           <div>
             <Eyebrow>Sobre a Cerne FO</Eyebrow>
             <h2 className="font-display mt-4 text-3xl font-medium leading-tight md:text-[42px]">
-              Uma casa, não uma startup.
+              Uma casa, não uma empresa emergente.
             </h2>
             <p className="mt-6 max-w-[48ch] text-tinta/60 dark:text-pergaminho/60">
               Nascida de um negócio de família dedicado à pedra e à construção,
@@ -225,7 +225,7 @@ export default function Home() {
             to="/contacto"
             className="shrink-0 bg-latao px-7 py-4 text-sm font-semibold text-tinta transition-colors hover:bg-latao-soft"
           >
-            Pedir contacto{" "}
+            Solicitar contacto{" "}
             <span aria-hidden="true" className="ml-3">
               →
             </span>

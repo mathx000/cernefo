@@ -1,13 +1,29 @@
-import React from 'react'
-import { Section, SectionHeading, Eyebrow } from '../components/UI'
-import { Seal } from '../components/Logo'
+import React from "react";
+import { Section, SectionHeading, Eyebrow } from "../components/UI";
+import { Seal } from "../components/Logo";
 
 const team = [
-  { name: 'Duarte Marques', role: 'Sócio-gerente', focus: 'Estratégia de investimento e relação com famílias' },
-  { name: 'Inês Cardoso', role: 'Diretora de promoção', focus: 'Coordenação de obra e licenciamento' },
-  { name: 'Rui Tavares', role: 'Consultor patrimonial', focus: 'Estruturação fiscal e sucessória' },
-  { name: 'Beatriz Nogueira', role: 'Gestora de ativos', focus: 'Administração de carteira e reporte' },
-]
+  {
+    name: "Duarte Marques",
+    role: "Sócio-gerente",
+    focus: "Estratégia de investimento e relação com famílias",
+  },
+  {
+    name: "Inês Cardoso",
+    role: "Diretora de promoção",
+    focus: "Coordenação de obra e licenciamento",
+  },
+  {
+    name: "Rui Tavares",
+    role: "Consultor patrimonial",
+    focus: "Estruturação fiscal e sucessória",
+  },
+  {
+    name: "Beatriz Nogueira",
+    role: "Gestora de ativos",
+    focus: "Administração de carteira e relatório",
+  },
+];
 
 export default function Equipa() {
   return (
@@ -18,8 +34,8 @@ export default function Equipa() {
           Uma equipa pequena, por escolha.
         </h1>
         <p className="mt-6 max-w-[60ch] text-lg text-tinta/60 dark:text-pergaminho/60">
-          Mantemos a estrutura enxuta de propósito: cada família trabalha diretamente com quem decide,
-          sem camadas de gestão intermédia.
+          Mantemos a estrutura enxuta de propósito: cada família trabalha
+          diretamente com quem decide, sem camadas de gestão intermédia.
         </p>
       </div>
 
@@ -28,9 +44,13 @@ export default function Equipa() {
           {team.map((m) => (
             <div key={m.name} className="bg-pergaminho p-8 dark:bg-[#14100C]">
               <Seal size={40} className="text-pedra" ringInner="#C9A227" />
-              <h3 className="font-display mt-5 text-lg font-medium">{m.name}</h3>
+              <h3 className="font-display mt-5 text-lg font-medium">
+                {m.name}
+              </h3>
               <p className="mt-1 text-sm text-latao">{m.role}</p>
-              <p className="mt-3 text-sm text-tinta/60 dark:text-pergaminho/60">{m.focus}</p>
+              <p className="mt-3 text-sm text-tinta/60 dark:text-pergaminho/60">
+                {m.focus}
+              </p>
             </div>
           ))}
         </div>
@@ -42,10 +62,13 @@ export default function Equipa() {
           title="Não recrutamos por volume."
           lede="Procuramos, ocasionalmente, perfis técnicos experientes em direito imobiliário, engenharia ou gestão de ativos que partilhem a mesma visão de longo prazo."
         />
-        <a href="mailto:carreiras@cernefo.pt" className="inline-block rounded-sm border border-tinta/25 px-7 py-3.5 text-sm font-semibold transition-colors hover:border-tinta dark:border-pergaminho/25 dark:hover:border-pergaminho">
+        <a
+          href="mailto:carreiras@cernefo.pt"
+          className="inline-block rounded-sm border border-tinta/25 px-7 py-3.5 text-sm font-semibold transition-colors hover:border-tinta dark:border-pergaminho/25 dark:hover:border-pergaminho"
+        >
           carreiras@cernefo.pt
         </a>
       </Section>
     </div>
-  )
+  );
 }
