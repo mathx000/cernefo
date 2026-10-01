@@ -263,12 +263,14 @@ export default function Home() {
               Cada relação começa com um diagnóstico, sem compromisso.
             </h2>
           </div>
-          <Link
-            to="/contacto"
-            className="shrink-0 rounded-sm bg-latao px-8 py-4 text-sm font-semibold text-verde-deep transition-colors hover:bg-latao-soft"
+          <a
+            href="https://wa.me/351210000000?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20uma%20consulta%20privada."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 rounded-sm bg-[#25D366] px-8 py-4 text-sm font-semibold text-[#102A1F] transition-colors hover:bg-[#1FC15B]"
           >
-            Marcar consulta privada
-          </Link>
+            WhatsApp
+          </a>
         </div>
       </Section>
     </>

@@ -34,7 +34,7 @@ export default function Equipa() {
           Uma equipa pequena, por escolha.
         </h1>
         <p className="mt-6 max-w-[60ch] text-lg text-tinta/60 dark:text-pergaminho/60">
-          Mantemos a estrutura enxuta de propósito: cada família trabalha
+          Mantemos a estrutura reduzida de propósito: cada família trabalha
           diretamente com quem decide, sem camadas de gestão intermédia.
         </p>
       </div>
