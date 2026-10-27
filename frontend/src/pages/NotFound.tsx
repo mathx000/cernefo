@@ -1,25 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { useLang } from '../hooks/useLang'
 
 export default function NotFound() {
+  const { t } = useLang()
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
-      <p className="text-xs font-semibold uppercase tracking-widest2 text-pedra">
-        Erro 404
-      </p>
-      <h1 className="font-display mt-4 text-4xl font-medium">
-        Esta página não existe.
-      </h1>
-      <p className="mt-4 max-w-[46ch] text-tinta/60 dark:text-pergaminho/60">
-        O endereço pode ter mudado ou nunca ter existido. Verifique a ligação ou
-        volte à página inicial.
-      </p>
-      <Link
-        to="/"
-        className="mt-8 rounded-sm bg-verde px-7 py-3.5 text-sm font-semibold text-pergaminho transition-colors hover:bg-verde-deep"
-      >
-        Voltar ao início
+    <div className="mx-auto max-w-wrap px-6 pb-32 pt-48 md:px-10 md:pt-56">
+      <h1 className="max-w-[18ch] font-display text-4xl font-normal leading-tight md:text-6xl">{t.notFound.title}</h1>
+      <span aria-hidden="true" className="mt-8 block h-px w-14 bg-latao" />
+      <p className="mt-8 max-w-[44ch] text-tinta-soft">{t.notFound.text}</p>
+      <Link to="/" className="mt-10 inline-block border-b border-verde pb-1 text-sm font-semibold text-verde">
+        {t.notFound.back}
       </Link>
     </div>
-  );
+  )
 }
