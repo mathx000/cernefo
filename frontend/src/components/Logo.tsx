@@ -1,5 +1,7 @@
 import React from 'react'
 
+type Ground = 'verde' | 'pergaminho' | 'dark' | 'light'
+
 /**
  * Marcas CERNE FO, conforme a "Proposta de Identidade Gráfica" e o ficheiro "Logos & Social":
  * - Selo: dois anéis concêntricos, C serifado ao centro e traço de latão sob a letra.
@@ -54,29 +56,63 @@ export function Seal({
 export function IconTile({
   size = 96,
   ground = 'verde',
+  shape = 'square',
 }: {
   size?: number
-  ground?: 'verde' | 'pergaminho'
+  ground?: Ground
+  shape?: 'square' | 'circle'
 }) {
-  const onVerde = ground === 'verde'
-  const fg = onVerde ? '#EAE2D2' : '#1F3A2E'
+  const onVerde = ground === 'verde' || ground === 'dark'
+  const background = onVerde ? '#1F3A2E' : '#EAE2D2'
+  const foreground = onVerde ? '#EAE2D2' : '#1F3A2E'
   return (
     <div
-      className="flex flex-none items-center justify-center rounded-[22%]"
-      style={{ width: size, height: size, background: onVerde ? '#1F3A2E' : '#EAE2D2' }}
+      className={`flex flex-none items-center justify-center ${shape === 'circle' ? 'rounded-full' : 'rounded-[22%]'}`}
+      style={{ width: size, height: size, background }}
       aria-hidden="true"
     >
-      <Seal size={size * 0.62} ring={fg} letter={fg} />
+      <Seal size={size * 0.62} ring={foreground} letter={foreground} />
     </div>
   )
 }
 
-/** Lockup compacto. `on` = fundo onde é colocado. */
-export function LockupCompact({ on = 'verde' }: { on?: 'verde' | 'pergaminho' }) {
-  const onVerde = on === 'verde'
+export function Wordmark({
+  ground = 'light',
+  align = 'center',
+  size = 'lg',
+}: {
+  ground?: 'dark' | 'light'
+  align?: 'left' | 'center'
+  size?: 'md' | 'lg'
+}) {
+  const onVerde = ground === 'dark'
+  const titleSize = size === 'lg' ? 'text-5xl md:text-6xl' : 'text-3xl'
+  return (
+    <div className={`inline-flex flex-col px-2 ${align === 'center' ? 'items-center text-center' : 'items-start text-left'}`}>
+      <span className={`font-display font-medium opsz-max tracking-tight ${titleSize} ${onVerde ? 'text-pergaminho' : 'text-tinta'}`}>
+        CERNE FO
+      </span>
+      <span aria-hidden="true" className="mb-3 mt-4 h-px w-14 bg-latao" />
+      <span className={`font-body text-xs font-semibold uppercase tracking-widest2 ${onVerde ? 'text-pergaminho/70' : 'text-pedra-deep'}`}>
+        Family Office
+      </span>
+    </div>
+  )
+}
+
+/** `on` identifies the background; `ground` remains available for legacy brand-page usage. */
+export function LockupCompact({
+  on,
+  ground,
+}: {
+  on?: 'verde' | 'pergaminho'
+  ground?: 'dark' | 'light'
+}) {
+  const onVerde = on ? on === 'verde' : (ground ?? 'dark') === 'dark'
+  const iconGround = onVerde ? 'pergaminho' : 'verde'
   return (
     <span className="inline-flex items-center gap-3.5">
-      <IconTile size={40} ground={onVerde ? 'pergaminho' : 'verde'} />
+      <IconTile size={40} ground={iconGround} />
       <span className="flex flex-col leading-none">
         <span
           className={`font-display text-[19px] font-medium opsz-max ${onVerde ? 'text-pergaminho' : 'text-tinta'}`}

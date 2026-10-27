@@ -41,6 +41,26 @@ export function Eyebrow({ children, id }: { children: React.ReactNode; id?: stri
   )
 }
 
+export function SectionHeading({
+  eyebrow,
+  title,
+  lede,
+}: {
+  eyebrow: string
+  title: React.ReactNode
+  lede?: React.ReactNode
+}) {
+  return (
+    <div className="mb-16 grid gap-6 md:mb-20 md:grid-cols-[0.9fr_1.4fr] md:gap-16">
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <div>
+        <h2 className="font-display text-3xl font-medium leading-tight md:text-[42px]">{title}</h2>
+        {lede && <p className="mt-4 max-w-[52ch] text-tinta-soft">{lede}</p>}
+      </div>
+    </div>
+  )
+}
+
 /** Botão de ação. `tone="verde"` sobre pergaminho; `tone="pergaminho"` sobre verde. Sem latão. */
 export function Button({
   tone = 'verde',
