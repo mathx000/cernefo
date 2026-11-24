@@ -14,6 +14,7 @@ export const pt = {
     closeMenu: 'Fechar menu',
     home: 'CERNE FO — início',
     skipToContent: 'Saltar para o conteúdo',
+    login: 'Login',
     links: [
       { id: 'casa', label: 'A Casa' },
       { id: 'ambito', label: 'Âmbito' },

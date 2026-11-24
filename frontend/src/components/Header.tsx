@@ -60,6 +60,12 @@ export default function Header() {
           ))}
           <span aria-hidden="true" className="h-4 w-px bg-pergaminho/20" />
           <LangSwitch />
+          <Link
+            to="/login"
+            className="border border-pergaminho/60 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-pergaminho transition-colors hover:border-pergaminho hover:bg-pergaminho hover:text-verde"
+          >
+            {t.nav.login}
+          </Link>
         </nav>
 
         <button
@@ -99,7 +105,16 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <LangSwitch className="mt-8" />
+          <div className="mt-8 flex items-center justify-between">
+            <LangSwitch />
+            <Link
+              to="/login"
+              onClick={() => setOpen(false)}
+              className="border border-pergaminho/60 px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-pergaminho"
+            >
+              {t.nav.login}
+            </Link>
+          </div>
         </nav>
       )}
     </header>

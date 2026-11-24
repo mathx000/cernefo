@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Privacidade from './pages/Privacidade'
 import NotFound from './pages/NotFound'
+import Login from './pages/Login'
 import { useLang } from './hooks/useLang'
 
 /** Navega para a âncora (#casa…) ou para o topo ao mudar de rota. */
@@ -38,6 +39,7 @@ export default function App() {
       <main id="conteudo" className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/privacidade" element={<Privacidade />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -15,3 +15,13 @@ conforme "Textos e notas para o novo site" (outubro 2026).
   para envio real por POST JSON; sem isso, abre o email do utilizador (mailto) com a mensagem preenchida.
 - `src/pages/Privacidade.tsx` — marcador de posição; falta o texto legal.
 - `vercel.json` — reescritas SPA (para /privacidade).
+
+## Login de cliente
+
+O formulário em `/login` envia credenciais para uma API segura. Configure no ambiente de produção:
+
+- `VITE_LOGIN_ENDPOINT` — POST JSON, por exemplo `/api/auth/login`
+- `VITE_PASSWORD_RESET_ENDPOINT` — POST JSON, por exemplo `/api/auth/password/reset`
+
+O login deve definir um cookie de sessão HTTP-only no servidor e responder com JSON opcional
+`{"redirectTo":"/"}`. Os endpoints não devem guardar a senha no frontend.

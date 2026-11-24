@@ -12,6 +12,7 @@ export const en: Content = {
     closeMenu: 'Close menu',
     home: 'CERNE FO — home',
     skipToContent: 'Skip to content',
+    login: 'Login',
     links: [
       { id: 'casa', label: 'The House' },
       { id: 'ambito', label: 'Our Scope' },
